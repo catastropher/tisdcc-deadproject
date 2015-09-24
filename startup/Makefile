@@ -26,7 +26,7 @@ ti85_zshell2.o \
 ti86_crash1.o \
 ti86_crash2.o
 
-SDCCAS = sdcc-as-z80
+SDCCAS = sdasz80
 
 all: $(startupobjs)
 

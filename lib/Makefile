@@ -5,7 +5,7 @@ SDCCLIB = sdcclib
 
 all: ti83p.lib
 
-ti83p.lib: $(TI83P_BCALLS)
+ti83p.lib: lcd.c
 	rm -f ti83p.lib
 	$(SDCCLIB) ti83p.lib $^
 
