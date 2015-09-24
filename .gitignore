@@ -5,3 +5,4 @@
 */*.pyc
 include/ti83pdefs.h
 install-prep
+*.*~
