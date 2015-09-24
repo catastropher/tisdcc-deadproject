@@ -2,7 +2,7 @@ NAME = tisdcc
 
 SDCC = sdcc
 SDCCAS = sdasz80
-SDCCLIB = sdcclib
+SDCCLIB = sdar
 
 DESTDIR = 
 

@@ -228,10 +228,6 @@ def compile(codeobj, options):
     wd = tempfile.mkdtemp()
 
     assert(len(wd) > 4)
-    
-    extraflags = []
-    extraflags.append("-I%s" % os.getcwd())
-    
     os.chdir(wd)
 
     osfh, tempsrc = tempfile.mkstemp(suffix=".c", dir=wd)
@@ -240,6 +236,7 @@ def compile(codeobj, options):
     fh.write(codeobj.contents)
     fh.close()
 
+    extraflags = []
     if options.includes:
       for incp in options.includes:
         extraflags.append("-I%s" % incp)
@@ -263,8 +260,6 @@ def compile(codeobj, options):
     stdout, stderr = proc.communicate()
 
     if os.path.exists(tempsrc.replace(".c",".rel")):
-      Popen(["cp",tempsrc.replace(".c",".asm"),cwd+"/"+codeobj.srcfile.replace(".c",".asm")])
-      
       return codeobject_from_file(tempsrc.replace(".c",".rel"), \
           tempfile=True)
 
@@ -296,7 +291,7 @@ def link(codeobjlist, options, startupobjdir):
   try:
     wd = tempfile.mkdtemp()
 
-    #assert(len(wd) > 4)
+    assert(len(wd) > 4)
     os.chdir(wd)
 
     nameobj = codeobject_for_progname( \

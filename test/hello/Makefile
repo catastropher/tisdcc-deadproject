@@ -1,2 +1,2 @@
 all:
-	tisdcc -t ti83p hello.c -o HELLO.8xp
+	tisdcc -v -t ti83p hello.c -o HELLO.8xp
